@@ -1,0 +1,31 @@
+#! /bin/sh
+bspc monitor -d I II III IV V VI VII VIII IX 
+bspc config border_width         3
+bspc config window_gap          15
+bspc config focus_follows_pointer true
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      false
+bspc config focused_border_color \#1b74f0
+bspc config normal_border_color \#2c4794
+bspc config border_radius 15
+
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
+bspc config automatic_scheme longest_side
+
+# Autostart programs
+killall sxhkd
+sxhkd &
+killall picom
+picom --experimental-backends &
+feh --bg-scale $HOME/Pictures/water.png
+polybar &
+fcitx5 &
+
+# Fix cursor
+xsetroot -cursor_name left_ptr
