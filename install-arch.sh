@@ -2,7 +2,7 @@
 
 # Check root
 if [ "$EUID" -ne 0 ]
-  then echo "This script must be run as root to install programs and move files to directories in /etc/"
+  then echo "This script must be run with sudo to install programs and move files to directories in /etc/"
   exit
 fi
 
