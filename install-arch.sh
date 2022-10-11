@@ -7,24 +7,28 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # Install betterlockscreen from AUR
-pacman -S base-devel --needed
 echo "Beginning installation of required programs."
-mkdir -p ~/misc/clone
-cd ~/misc/clone
-git clone https://aur.archlinux.org/betterlockscreen.git
-cd betterlockscreen
-makepkg -si
-cd ~/misc/clone
-rm betterlockscreen/ -rf
+if pacman -Q | grep -q betterlockscreen; then
+	echo "Betterlockscreen already installed, skipping."
+else
+	pacman -S base-devel --needed
+	mkdir -p ~/misc/clone
+	cd ~/misc/clone
+	git clone https://aur.archlinux.org/betterlockscreen.git
+	cd betterlockscreen
+	makepkg -si
+	cd ~/misc/clone
+	rm betterlockscreen/ -rf
+fi
 
 # Install packages
 pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl --needed
 
 # Install dotfiles
 cp -r bspwm/ alacritty/ rofi/ fastfetch/ ~/.config/
-cp Pictures ~/
-sudo cp polybar/ /etc/
-sudo cp picom/ /etc/xdg/
+cp -r Pictures ~/
+sudo cp -r polybar/ /etc/
+sudo cp -r picom/ /etc/xdg/
 
 # Finish
 echo "Applying finishing touches"
