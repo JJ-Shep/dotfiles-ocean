@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # Check root
-if [ "$EUID" -ne 0 ]
-  then echo "This script must be run with sudo to install programs and move files to directories in /etc/"
+if [ "$EUID" == 0 ]
+  then echo "This script must be run as a standard user, otherwise configuration files will be installed in /root."
   exit
 fi
 
 # Install betterlockscreen from AUR
 echo "Beginning installation of required programs."
-if pacman -Q | grep -q betterlockscreen; then
+if sudo pacman -Q | grep -q betterlockscreen; then
 	echo "Betterlockscreen already installed, skipping."
 else
-	pacman -S base-devel --needed
+	sudo pacman -S base-devel --needed
 	mkdir -p ~/misc/clone
 	cd ~/misc/clone
 	git clone https://aur.archlinux.org/betterlockscreen.git
@@ -22,7 +22,7 @@ else
 fi
 
 # Install packages
-pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl --needed
+sudo pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl --needed
 
 # Install dotfiles
 cp -r bspwm/ alacritty/ rofi/ fastfetch/ ~/.config/
