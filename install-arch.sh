@@ -6,6 +6,8 @@ if [ "$EUID" == 0 ]
   exit
 fi
 
+sudo pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl bc feh i3lock-color imagemagick xorg-xdpyinfo xorg-xrandr --needed
+
 # Install betterlockscreen from AUR
 echo "Beginning installation of required programs."
 if sudo pacman -Q | grep -q betterlockscreen; then
@@ -20,9 +22,6 @@ else
 	cd ~/misc/clone
 	rm betterlockscreen/ -rf
 fi
-
-# Install packages
-sudo pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl bc feh i3lock-color imagemagick xorg-xdpyinfo xorg-xrandr --needed
 
 # Install dotfiles
 cp -r bspwm/ alacritty/ rofi/ fastfetch/ ~/.config/
