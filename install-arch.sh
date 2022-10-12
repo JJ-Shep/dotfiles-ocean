@@ -22,7 +22,7 @@ else
 fi
 
 # Install packages
-sudo pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl --needed
+sudo pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl bc feh i3lock-color imagemagick xorg-xdpyinfo xorg-xrandr --needed
 
 # Install dotfiles
 cp -r bspwm/ alacritty/ rofi/ fastfetch/ ~/.config/
