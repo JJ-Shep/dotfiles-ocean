@@ -44,3 +44,4 @@ sudo cp -r picom/ /etc/xdg/
 # Finish
 echo ""
 echo "Done. Make sure to run \`betterlockscreen -u ~/Pictures/water.png\` after starting BSPWM."
+echo "Be advised, no display manager was installed by the script. If you do not have one in mind, I recommend ly from the AUR."
