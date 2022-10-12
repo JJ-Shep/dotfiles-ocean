@@ -1,5 +1,5 @@
 # dotfiles-ocean
-The dotfiles for a BSPWM setup with a dark ocean color scheme
+The dotfiles for a BSPWM setup with a dark ocean-themed color scheme. Currently only supported on Arch Linux.
 ![Screenshot](oceanrice.png)
 
 Contains install script for Arch Linux.
