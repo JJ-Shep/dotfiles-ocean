@@ -39,7 +39,7 @@ mkdir ~/.config 2>/dev/null
 cp -r bspwm/ alacritty/ rofi/ fastfetch/ sxhkd/ ~/.config/
 cp -r Pictures ~/
 sudo cp -r polybar/ /etc/
-sudo cp -r picom/ /etc/xdg/
+sudo cp -r picom/picom.conf /etc/xdg/
 
 # Finish
 echo ""
