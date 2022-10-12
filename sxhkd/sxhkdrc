@@ -141,7 +141,7 @@ XF86MonBrightness{Up,Down}
 # Changing the Volume
 
 XF86Audio{Raise,Lower}Volume
-	pulsemixer --change-volume {+,-}10
+	pulsemixer --change-volume {+,-}5
 #
 XF86AudioMute
 	pulsemixer --toggle-mute
