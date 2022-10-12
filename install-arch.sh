@@ -6,6 +6,7 @@ if [ "$EUID" == 0 ]
   exit
 fi
 
+# Install dependencies
 sudo pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl bc feh imagemagick xorg-xdpyinfo xorg-xrandr --needed
 
 # Install AUR packages
@@ -21,7 +22,6 @@ else
 	cd ~/misc
 fi
 
-echo "Beginning installation of required programs."
 if sudo pacman -Q | grep -q betterlockscreen; then
 	echo "Betterlockscreen already installed, skipping."
 else
