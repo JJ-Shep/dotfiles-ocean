@@ -7,7 +7,7 @@ if [ "$EUID" == 0 ]
 fi
 
 # Install dependencies
-sudo pacman -S exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl bc feh imagemagick xorg-xdpyinfo xorg-xrandr --needed
+sudo pacman -S xorg exa alacritty bspwm sxhkd polybar rofi firefox vim ttf-iosevka-nerd feh picom pulsemixer brightnessctl bc feh imagemagick xorg-xdpyinfo xorg-xrandr --needed
 
 # Install AUR packages
 if sudo pacman -Q | grep -q i3lock-color; then
