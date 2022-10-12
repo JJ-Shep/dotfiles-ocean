@@ -36,7 +36,7 @@ fi
 
 # Install dotfiles
 mkdir ~/.config 2>/dev/null
-cp -r bspwm/ alacritty/ rofi/ fastfetch/ ~/.config/
+cp -r bspwm/ alacritty/ rofi/ fastfetch/ sxhkd/ ~/.config/
 cp -r Pictures ~/
 sudo cp -r polybar/ /etc/
 sudo cp -r picom/ /etc/xdg/
