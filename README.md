@@ -5,8 +5,6 @@ The dotfiles for a BSPWM setup with a dark ocean-themed color scheme. Currently 
 Contains install script for Arch Linux.
 
 Required packages for Arch: (installed by script):
-
-	[AUR] paru-bin (To install betterlockscreen)
 	
 	[AUR] betterlockscreen (Lock screen client)
 	
