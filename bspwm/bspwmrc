@@ -21,8 +21,6 @@ bspc config automatic_scheme longest_side
 # Autostart programs
 killall sxhkd
 sxhkd &
-killall picom
-picom --experimental-backends &
 feh --bg-scale $HOME/Pictures/water.png
 polybar &
 fcitx5 &
